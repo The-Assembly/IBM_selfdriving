@@ -1,0 +1,34 @@
+Install Python and Pip :
+- sudo apt-get update
+- sudo apt-get install python-dev
+- sudo apt-get install python-pip
+
+Install GPIO libraries:
+- sudo apt-get install python-rpi.gpio
+
+To enable the I2C interface of the Raspberry Pi:
+1.Go to the start menu (raspberry symbol)
+2.Raspberry pi configuration 
+3.Preferances 
+4.I2C interface- enable
+
+MPU6050 Libraries
+
+Here are two ways of installing this package: via PyPi or via the git repository. Installing from the git repository insures that you have the absolute latest version installed, but this can be prone to bugs.
+
+1.install the python-smbus package
+-sudo apt install python-smbus
+
+2. Install this package from PyPi repository
+-pip install mpu6050-raspberrypi
+
+Or:
+2. Clone the repository and run setup.py
+
+-git clone https://github.com/Tijndagamer/mpu6050.git
+-python setup.py install
+
+IBM library
+
+Install the latest version of the library with pip
+-pip install ibmiotf

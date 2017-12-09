@@ -1,0 +1,36 @@
+-sudo apt-get update
+
+Then we need to install few Bluetooth related packages:
+-sudo apt-get install bluetooth blueman bluez
+
+Then reboot the Raspberry Pi:
+-sudo reboot
+
+BlueZ is a open source project and official Linux Bluetooth protocol stack. It supports all the core Bluetooth protocols and now become part of official Linux Kernel.
+Blueman provides the Desktop interface to manage and control the Bluetooth devices.
+ 
+Finally we need python Library for Bluetooth communication so that we can send and receive data through RFCOMM using Python language:
+-sudo apt-get install python-bluetooth
+ 
+Now we are done with installing required packages for Bluetooth communication in Raspberry Pi.
+ 
+Pairing Devices with Raspberry Pi over Bluetooth:
+
+Pairing Bluetooth Devices, like mobile phone, with Raspberry Pi is very easy. Here we have paired our Android Smart phone with Raspberry Pi. We have previously installed BlueZ in Pi, which provides a command line utility called “bluetoothctl” to manage our Bluetooth devices. But before that, connect your USB Bluetooth dongle with Raspberry Pi and check that whether it is detected or not, by using below command:
+-lsusb
+ 
+Now open the bluetoothctl utility by below command:
+-sudo bluetoothctl
+
+You can check all the commands of bluetoothctl utility by typing ‘help’. For now we need to enter below commands in given order:
+-[bluetooth]# power on
+-[bluetooth]# agent on
+-[bluetooth]# discoverable on
+-[bluetooth]# pairable on
+-[bluetooth]# scan on
+
+After the last command “scan on”, you will see your Bluetooth device (Mobile phone) in the list. Make sure that your mobile has Bluetooth turned on and visible by nearby devices. Then copy the MAC address of you device and pair it by using given command:
+-pair <address of your phone>
+
+Then you will be prompted for Passcode or Pin in your Terminal console then type passcode there and press enter. Then type the same passcode in your mobile phone when prompted and you are now successfully paired with Raspberry Pi. We have also explained this whole process in our Video given at the end.
+bluetooth-paring-android-phone-with-raspberry-pi
